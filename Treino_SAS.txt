@@ -108,7 +108,32 @@ RUN;
 */
 
 ----------------------------------------------------------------------------
+# Usando Comandos SQL
 
+PROC IMPORT OUT=NOTASALUNOS
+DATAFILE="/home/u58300348/notaalunos.xlsx"
+DBMS=XLSX REPLACE;
+
+PROC SQL;
+SELECT ALUNOS, MATERIA, (NOTA1+NOTA2)/2 AS MEDIA
+FROM NOTASALUNOS;
+RUN; 
+
+
+# USANDO CASE/WHEN
+
+PROC IMPORT OUT=NOTASALUNOS
+DATAFILE="/home/u58300348/notaalunos.xlsx"
+DBMS=XLSX REPLACE;
+
+*Usando SQL;
+PROC SQL;
+SELECT ALUNOS, MATERIA, (NOTA1+NOTA2)/2 AS MEDIA,
+CASE 
+	WHEN (NOTA1+NOTA2)/2 >=7 THEN 'APROVADO'
+	ELSE 'REPROVADO' END AS STATUS
+FROM NOTASALUNOS;
+RUN; 
 
 
 ----------------------------------------------------------------------------
