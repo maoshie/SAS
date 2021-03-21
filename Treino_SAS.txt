@@ -56,18 +56,16 @@ DATA AGENCIADADOS;
 INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
 INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$
 
-----------------------------------------------------------------------------
-*---------------------------------------------------------------------------------------------;
+-------------------------------
 
-* INCLUSAO ARQUIVO .CSV ;
+DATA NOTAS; 
+INFILE'/home/u58300348/ALUNOS.CSV' DSD MISSOVER FIRSTOBS=1 DLM=","; 
+INPUT ALUNOS$ MATÉRIA$ NOTA1 NOTA2; 
+MEDIA=(NOTA1+NOTA2)/2; 
+IF MEDIA >=7 THEN STATUS='APROVADO'; 
+ELSE STATUS='REPROVADO'; 
+RUN;
 
-* DSD MISSOVER = Preserva espaços em branco.;
-* FIRSTOBS=2 = Função para ler a partir de qual linha;
-* DLM="" = Delimitador;
-
-DATA AGENCIADADOS;
-INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
-INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$
 
 *---------------------------------------------------------------------------------------------;
 
