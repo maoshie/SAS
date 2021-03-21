@@ -44,9 +44,17 @@ MediaVendas=PIC+CARTÃO+CREDIARIO+SEGURO/4;
  
 RUN;
 
-
 ----------------------------------------------------------------------------
 
+* INCLUSAO ARQUIVO .CSV ;
+
+* DSD MISSOVER = Preserva espaços em branco.;
+* FIRSTOBS=2 = Função para ler a partir de qual linha;
+* DLM="" = Delimitador;
+
+DATA AGENCIADADOS;
+INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
+INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$
 
 ----------------------------------------------------------------------------
 

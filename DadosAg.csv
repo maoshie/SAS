@@ -1,11 +1,11 @@
 Agência;Abertura;CEP;Logradouro;Cidade;Horário Estendido
-6937;10:00;01519-000;Rua Rui Pirozelli, 434;SP;Nao
-1850;10:00;03811-020;Rua Fioravante Garcia, 2000;SP;Nao
-2424;10:00;23549-001;Avenida São Miguel, 330;SP;Nao
-4820;10:00;50610-555;Avenida Getúlio Vargas, 99;RJ;Nao
-7012;11:00;48921-098;Alameda Doutor Dantas, SN;RJ;Nao
-6029;11:00;00102-042;Praça do Conde Velho, 494;SC;Nao
-5051;11:00;34180-909;BR 115, lote 13 quadra 116 SN;SC;Nao
-5920;12:00;45029-094;Rua Grito do Ipiranga, 692;SC;Sim
-2422;12:00;58325-928;Rua Aparecida do Norte, 5;PE;Sim
-3114;09:00;65433-000;Rua Coronel Garcia Marques, 13;PE;Nao
+6937;10;01519-000;Rua Rui Pirozelli, 434;SP;Nao
+1850;10;03811-020;Rua Fioravante Garcia, 2000;SP;Nao
+2424;10;23549-001;Avenida São Miguel, 330;SP;Nao
+4820;10;50610-555;Avenida Getúlio Vargas, 99;RJ;Nao
+7012;11;48921-098;Alameda Doutor Dantas, SN;RJ;Nao
+6029;12;00102-042;Praça do Conde Velho, 494;SC;Nao
+5051;12;34180-909;BR 115, lote 13 quadra 116 SN;SC;Nao
+5920;13;45029-094;Rua Grito do Ipiranga, 692;SC;Sim
+2422;13;58325-928;Rua Aparecida do Norte, 5;PE;Sim
+3114;12;65433-000;Rua Coronel Garcia Marques, 13;PE;Nao
