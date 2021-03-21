@@ -29,11 +29,19 @@ SAVEIRO 2016 98 56 153
 
 RUN;
 ----------------------------------------------------------------------------
-# IMPORTAR UM ARQUIVO .TXT
-
-DATA VENDAOUTUBRO;   <-- tabela 
-INFILE '/home/u58300348/VendasOut.txt';   <-- caminho do arquivo
-INPUT AGENCIA PIC CARTAO CREDIARIO SEGURO; <-- colunas
+*IMPORTAR UM ARQUIVO .TXT;; 
+ 
+* DSD MISSOVER = Preserva espaços em branco.; 
+* FIRSTOBS = Função para ler a partir de qual linha --> FIRSTOBS=2 = ler a partir da segunda linha sem cabeçalho; 
+* DLM="" = Delimitador; 
+ 
+DATA VendasOutubro1; 
+INFILE '/home/u58300348/VendasOut.txt' DSD MISSOVER FIRSTOBS=2  DLM="	"; * delimitador do txt = tab ; 
+INPUT AGENCIA PIC CARTÃO CREDIARIO SEGURO; 
+ 
+TotalVendas=PIC+CARTÃO+CREDIARIO+SEGURO; 
+MediaVendas=PIC+CARTÃO+CREDIARIO+SEGURO/4; 
+ 
 RUN;
 
 
