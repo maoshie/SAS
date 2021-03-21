@@ -133,11 +133,51 @@ CASE
 	WHEN (NOTA1+NOTA2)/2 >=7 THEN 'APROVADO'
 	ELSE 'REPROVADO' END AS STATUS
 FROM NOTASALUNOS;
-RUN; 
+RUN; 	
 
 
 ----------------------------------------------------------------------------
+EXERCICIOS
 
+1- Selecionar AGENCIA, ESTADO da tabela DADOSAG;
+2- Selecionar todos os dados da tabela VENDASOUT;
+3- Selecionar colunas PIC, LIS da tabela VENDASOUT;	
+*/
+------------------------------------------------------------------
+ * 1- Selecionar AGENCIA, ESTADO da tabela DADOSAG; 
 
+DATA AGENCIADADOS;
+INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
+INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$;
+RUN;
+
+PROC SQL;
+SELECT AGENCIA, UF FROM AGENCIADADOS;
+RUN;
 
 ----------------------------------------------------------------------------
+ * 2- Selecionar todos os dados da tabela VENDASOUT;
+ 
+DATA VENDASOUT1;
+INFILE "/home/u58300348/VendasOut.txt" DSD MISSOVER FIRSTOBS=2 DLM='	'; 
+INPUT AGENCIA PIC CARTAO CREDITO LIS;
+RUN;
+
+PROC SQL;
+SELECT * FROM VENDASOUT1;
+RUN;
+
+------------------------------------------------------------------
+3- Selecionar colunas PIC, LIS da tabela VENDASOUT;
+
+DATA VENDASOUT1;
+INFILE "/home/u58300348/VendasOut.txt" DSD MISSOVER FIRSTOBS=2 DLM='	'; 
+INPUT AGENCIA PIC CARTAO CREDITO LIS;
+RUN;
+
+PROC SQL;
+SELECT AGENCIA, PIC, LIS FROM VENDASOUT1;
+RUN;
+
+
+# FINISH!
