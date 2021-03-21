@@ -57,8 +57,57 @@ INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
 INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$
 
 ----------------------------------------------------------------------------
+*---------------------------------------------------------------------------------------------;
 
+* INCLUSAO ARQUIVO .CSV ;
 
+* DSD MISSOVER = Preserva espaços em branco.;
+* FIRSTOBS=2 = Função para ler a partir de qual linha;
+* DLM="" = Delimitador;
+
+DATA AGENCIADADOS;
+INFILE "/home/u58300348/DadosAg.csv" DSD MISSOVER FIRSTOBS=2 DLM=";";
+INPUT AGENCIA HR_ABERTURA$ CEP$ LOGRADOURO$ UF$ HR_ESTENDIDO$
+
+*---------------------------------------------------------------------------------------------;
+
+/* IMPORTAR ARQUIVO .XLSX */
+
+* 1- PROC IMPORT OUT --> nome da tabela;
+* 2- DATAFILE= 'Caminho do arquivo.xlsx' ;
+* 3- DBMS=XLSX REPLACE  --> Substituir o atual pela nova;
+* 4- PROC PRINT/OUT = Mostrar a tabela;
+
+------------------------------------------
+
+# 1 forma de fazer.
+
+File name: notaalunos.xlsx
+Source location: /home/u58300348
+
+FILENAME REFFILE '/home/u58300348/notaalunos.xlsx';
+PROC IMPORT DATAFILE=REFFILE
+	DBMS=XLSX
+	OUT=WORK.IMPORT;  * --> mostrar a saida ;
+	GETNAMES=YES;  * --> colocar o cabeçalho ; 
+RUN;
+
+------------------------------------------
+# Formas de mostrar as saídas
+#1 - PROC PRINT <nometabela>
+#2 - OUT = <Nometabela>
+
+------------------------------------------
+# 2 Forma de fazer;
+
+PROC IMPORT OUT=NOTASALUNOS
+DATAFILE="/home/u58300348/notaalunos.xlsx"
+DBMS=XLSX REPLACE;
+
+PROC PRINT NOTASALUNOS;
+RUN;
+
+*/
 
 ----------------------------------------------------------------------------
 
