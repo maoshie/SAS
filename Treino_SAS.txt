@@ -28,11 +28,13 @@ GOL 2011 89 115 168
 SAVEIRO 2016 98 56 153
 
 RUN;
-
-RUN;
-
 ----------------------------------------------------------------------------
+# IMPORTAR UM ARQUIVO .TXT
 
+DATA VENDAOUTUBRO;   <-- tabela 
+INFILE '/home/u58300348/VendasOut.txt';   <-- caminho do arquivo
+INPUT AGENCIA PIC CARTAO CREDIARIO SEGURO; <-- colunas
+RUN;
 
 
 ----------------------------------------------------------------------------
