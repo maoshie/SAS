@@ -3,10 +3,33 @@
 
 
 ----------------------------------------------------------------------------
+/*
+COMENTARIOS = */ /* ou * ;
 
+Criação da tabela vendacarros
+DATA = criar tabela vendacarros;
+INPUT = criação de colunas;
+CARD = inserir informações;
 
-----------------------------------------------------------------------------
+$ = colocar um $ depois do nome para identificar que é uma string, e não Numero.
 
+*/
+-----------------------------------------------------------------------------
+DATA vendacarros;
+INPUT CARRO$ ANO JAN FEV MAR;
+
+SOMA=JAN+FEV+MAR;  * Criando uma coluna SOMA;
+MEDIA=JAN+FEV+MAR/3;  * criando uma coluna media;
+ 
+CARDS;
+CIVIC 2018 123 89 90
+PASSAT 2010 65 70 69
+GOL 2011 89 115 168
+SAVEIRO 2016 98 56 153
+
+RUN;
+
+RUN;
 
 ----------------------------------------------------------------------------
 
